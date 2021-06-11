@@ -1,0 +1,20 @@
+.page-body {
+    background-image: url("https://cdn.pixabay.com/photo/2017/09/06/13/22/american-2721441_1280.jpg");
+    width: 100%;
+    height: 1000px;
+    background-size: 100% 100%;
+}
+
+.table-01 {
+    background: white;
+}
+
+#flight-header{
+    background: white;
+    display: inline-block; 
+    position: absolute; 
+    top: 100px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    white-space: nowrap; 
+}

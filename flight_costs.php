@@ -46,11 +46,10 @@
   <!-- <div class="header">
     <h2>Home Page</h2>
   </div> -->
+ <!-- Adding the Navigation bar -->
 
-  <!-- Adding the Navigation bar -->
 
-
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-inverse">
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-inverse">
     <ul class="navbar-nav ml-aut">
       <li class="nav-item active">
         <a class="nav-link text-light" href="index.php">Home</a>
@@ -74,6 +73,7 @@
   </nav>
 
 
+
   <div class="content">
     <!-- notification message -->
     <?php if (isset($_SESSION['success'])) : ?>
@@ -91,19 +91,19 @@
   <div class="page-body">
 
     <br><br><br><br>
-    <h1 id = "flight-header">Flight Schedules</h1>
+    <h1 id = "flight-header">Flight Costs</h1>
     </br>
     <div class="container table-01">
       <table class="table">
         <thead>
           <tr>
+          
+					 	
             <th scope="col">Flight Number</th>
-            <th scope="col">Airline Code</th>
-            <th scope="col">Aircraft Type</th>
-            <th scope="col">Origin Airport Code</th>
-            <th scope="col">Destination Airport Code</th>
-            <th scope="col">Departure Time</th>
-            <th scope="col">Arrival Time</th>
+            <th scope="col">Airline Type Code</th>
+            <th scope="col">Valid from Date </th>
+            <th scope="col">Valid to Date </th>
+            <th scope="col">Flight Cost</th>
           </tr>
         </thead>
         <tbody>
@@ -113,17 +113,15 @@
 
   $db = mysqli_connect('localhost','root','','airline-database');
 
-  $sql = "SELECT * FROM flight_schedules";
+  $sql = "SELECT * FROM flight_costs";
   $result = mysqli_query($db,$sql);
   while($row = mysqli_fetch_assoc($result)){
     echo "<tr>
     <td>{$row['flight_number']}</td>
-    <td>{$row['airline_code']}</td>
-    <td>{$row['usual_aircraft_type_code']}</td>
-    <td>{$row['origin_airport_code']}</td>
-    <td>{$row['destination_airport_code']}</td>
-    <td>{$row['departure_date_time']}</td>
-    <td>{$row['arrival_date_time']}</td>
+    <td>{$row['aircraft_type_code']}</td>
+    <td>{$row['valid_from_date']}</td>
+    <td>{$row['valid_to_date']}</td>
+    <td>{$row['flight_cost']}</td>
     </tr>
   ";
   }
